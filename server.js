@@ -23,6 +23,10 @@ app.use(express.json());
 app.use("/api/destination", destinationRoutes);
 app.use("/api/user", userRoutes);
 
+app.use("/", (req, res) => {
+    res.send("Hello 4");
+  });
+
 process.on("uncaughtException", (err) => {
   console.log(`Error : ${err.message}`);
   console.log("shutting down the server for uncaught exception");
