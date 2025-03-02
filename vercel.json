@@ -2,7 +2,6 @@
     "version": 2,
     "name": "wander_log_backend",
     "builds": [{ "src": "server.js", "use": "@vercel/node" }],
-    "routes": [{ "src": "/(.*)", "dest": "/server.js" }],
-    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+    "routes": [{ "src": "/(.*)", "dest": "/server.js" }]
   }
   
