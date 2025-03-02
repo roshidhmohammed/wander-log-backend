@@ -6,7 +6,7 @@ const { jsonData } = require("../config/destinationData");
 const userRegistraion = catchAsyncErrors(async (req, res, next) => {
   try {
     const { name } = req.body;
-    const user = await User.findOne({ name: name.toLowerCase() });
+    const user = await User.findOne({ name: name });
     if (!user) {
       await User.create({
         name,
