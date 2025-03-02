@@ -11,11 +11,14 @@ require("dotenv").config({
 const port = process.env.PORT;
 
 app.use(
-    cors({
+    cors(
+      {
       origin:process.env.API_URL,
       methods: ["GET", "POST", "PUT", "DELETE"],
+       allowedHeaders: "Content-Type, Authorization",
       credentials: true,
-    })
+    }
+  )
   );
 
 app.use(express.json());
