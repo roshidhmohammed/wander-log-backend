@@ -10,7 +10,13 @@ require("dotenv").config({
 });
 const port = process.env.PORT;
 
-app.use(cors());
+app.use(
+    cors({
+      origin:process.env.API_URL,
+      methods: ["GET", "POST", "PUT", "DELETE"],
+      credentials: true,
+    })
+  );
 
 app.use(express.json());
 
